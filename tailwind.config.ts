@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'fantasy': ['Cinzel', 'serif'],
+				'ancient': ['Uncial Antiqua', 'cursive'],
+				'parchment': ['Crimson Text', 'serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,6 +67,23 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Fantasy theme colors
+				'dungeon': {
+					dark: '#0f0f23',
+					stone: '#2d2d3a',
+					mist: '#4a4a5c',
+				},
+				'mystical': {
+					gold: '#d4af37',
+					purple: '#6a4c93',
+					blue: '#1e3a8a',
+					green: '#065f46',
+				},
+				'parchment': {
+					light: '#f4f1e8',
+					dark: '#e8dcc0',
+					burnt: '#d4c5a0',
 				}
 			},
 			borderRadius: {
@@ -84,11 +107,34 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glow': {
+					'0%, 100%': {
+						textShadow: '0 0 5px #d4af37, 0 0 10px #d4af37, 0 0 15px #d4af37'
+					},
+					'50%': {
+						textShadow: '0 0 10px #d4af37, 0 0 20px #d4af37, 0 0 30px #d4af37'
+					}
+				},
+				'flicker': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-5px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow': 'glow 2s ease-in-out infinite',
+				'flicker': 'flicker 1.5s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'fantasy-gradient': 'linear-gradient(135deg, #0f0f23 0%, #2d2d3a 50%, #4a4a5c 100%)',
+				'parchment-gradient': 'linear-gradient(135deg, #f4f1e8 0%, #e8dcc0 100%)',
 			}
 		}
 	},
